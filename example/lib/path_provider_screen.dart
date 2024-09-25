@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 class PathProviderScreen extends StatefulWidget {
-  PathProviderScreen({Key key, this.title}) : super(key: key);
+  PathProviderScreen({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -12,13 +12,13 @@ class PathProviderScreen extends StatefulWidget {
 }
 
 class _PathProviderScreenState extends State<PathProviderScreen> {
-  Future<Directory> _tempDirectory;
-  Future<Directory> _appSupportDirectory;
-  Future<Directory> _appLibraryDirectory;
-  Future<Directory> _appDocumentsDirectory;
-  Future<Directory> _externalDocumentsDirectory;
-  Future<List<Directory>> _externalStorageDirectories;
-  Future<List<Directory>> _externalCacheDirectories;
+  late Future<Directory> _tempDirectory;
+  late Future<Directory> _appSupportDirectory;
+  late Future<Directory> _appLibraryDirectory;
+  late Future<Directory> _appDocumentsDirectory;
+  late Future<Directory>? _externalDocumentsDirectory;
+  late Future<List<Directory>> _externalStorageDirectories;
+  late Future<List<Directory>> _externalCacheDirectories;
 
   void _requestTempDirectory() {
     setState(() {
@@ -33,7 +33,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
       if (snapshot.hasError) {
         text = Text('Error: ${snapshot.error}');
       } else if (snapshot.hasData) {
-        text = Text('path: ${snapshot.data.path}');
+        text = Text('path: ${snapshot.data?.path}');
       } else {
         text = const Text('path unavailable');
       }
@@ -49,7 +49,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
         text = Text('Error: ${snapshot.error}');
       } else if (snapshot.hasData) {
         final String combined =
-        snapshot.data.map((Directory d) => d.path).join(', ');
+            snapshot.data!.map((Directory d) => d.path).join(', ');
         text = Text('paths: $combined');
       } else {
         text = const Text('path unavailable');
@@ -78,19 +78,22 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
 
   void _requestExternalStorageDirectory() {
     setState(() {
-      _externalDocumentsDirectory = getExternalStorageDirectory();
+      _externalDocumentsDirectory =
+          getExternalStorageDirectory() as Future<Directory>?;
     });
   }
 
   void _requestExternalStorageDirectories(StorageDirectory type) {
     setState(() {
-      _externalStorageDirectories = getExternalStorageDirectories(type: type);
+      _externalStorageDirectories =
+          getExternalStorageDirectories(type: type) as Future<List<Directory>>;
     });
   }
 
   void _requestExternalCacheDirectories() {
     setState(() {
-      _externalCacheDirectories = getExternalCacheDirectories();
+      _externalCacheDirectories =
+          getExternalCacheDirectories() as Future<List<Directory>>;
     });
   }
 
@@ -105,7 +108,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RaisedButton(
+              child: FilledButton(
                 child: const Text('Get Temporary Directory'),
                 onPressed: _requestTempDirectory,
               ),
@@ -114,7 +117,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
                 future: _tempDirectory, builder: _buildDirectory),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RaisedButton(
+              child: FilledButton(
                 child: const Text('Get Application Documents Directory'),
                 onPressed: _requestAppDocumentsDirectory,
               ),
@@ -123,7 +126,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
                 future: _appDocumentsDirectory, builder: _buildDirectory),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RaisedButton(
+              child: FilledButton(
                 child: const Text('Get Application Support Directory'),
                 onPressed: _requestAppSupportDirectory,
               ),
@@ -132,7 +135,7 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
                 future: _appSupportDirectory, builder: _buildDirectory),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RaisedButton(
+              child: FilledButton(
                 child: const Text('Get Application Library Directory'),
                 onPressed: _requestAppLibraryDirectory,
               ),
@@ -141,11 +144,11 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
                 future: _appLibraryDirectory, builder: _buildDirectory),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RaisedButton(
+              child: FilledButton(
                 child: Text(
                     '${Platform.isIOS ? "External directories are unavailable " "on iOS" : "Get External Storage Directory"}'),
                 onPressed:
-                Platform.isIOS ? null : _requestExternalStorageDirectory,
+                    Platform.isIOS ? null : _requestExternalStorageDirectory,
               ),
             ),
             FutureBuilder<Directory>(
@@ -153,16 +156,16 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
             Column(children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: RaisedButton(
+                child: FilledButton(
                   child: Text(
                       '${Platform.isIOS ? "External directories are unavailable " "on iOS" : "Get External Storage Directories"}'),
                   onPressed: Platform.isIOS
                       ? null
                       : () {
-                    _requestExternalStorageDirectories(
-                      StorageDirectory.music,
-                    );
-                  },
+                          _requestExternalStorageDirectories(
+                            StorageDirectory.music,
+                          );
+                        },
                 ),
               ),
             ]),
@@ -172,11 +175,11 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
             Column(children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: RaisedButton(
+                child: FilledButton(
                   child: Text(
                       '${Platform.isIOS ? "External directories are unavailable " "on iOS" : "Get External Cache Directories"}'),
                   onPressed:
-                  Platform.isIOS ? null : _requestExternalCacheDirectories,
+                      Platform.isIOS ? null : _requestExternalCacheDirectories,
                 ),
               ),
             ]),

@@ -53,7 +53,6 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-    namespace 'record.wilson.flutter.com.flutter_plugin_record_example'
 }
 
 flutter {

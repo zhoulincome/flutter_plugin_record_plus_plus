@@ -1,15 +1,9 @@
-// JX_GCDTimerManager.m
-// 
-// Created by joy on 2022/07/08
-// Copyright (c) 2022年 Tencent. All rights reserved.
-//
+
 #import "JX_GCDTimerManager.h"
 
 @interface JX_GCDTimerManager()
-/// The factory that creates and manages timerContainer.
-@property (nonatomic, strong) NSMutableDictionary *timerContainer;
 
-/// The factory that creates and manages actionBlockCache.
+@property (nonatomic, strong) NSMutableDictionary *timerContainer;
 @property (nonatomic, strong) NSMutableDictionary *actionBlockCache;
 
 @end
@@ -20,14 +14,14 @@
 
 + (JX_GCDTimerManager *)sharedInstance
 {
-    static JX_GCDTimerManager *gTimerManager = nil;
+    static JX_GCDTimerManager *_gcdTimerManager = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken,^{
-        gTimerManager = [[JX_GCDTimerManager alloc] init];
+        _gcdTimerManager = [[JX_GCDTimerManager alloc] init];
     });
     
-    return gTimerManager;
+    return _gcdTimerManager;
 }
 
 - (void)scheduledDispatchTimerWithName:(NSString *)timerName

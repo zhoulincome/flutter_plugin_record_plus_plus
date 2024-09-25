@@ -1,15 +1,15 @@
 
 name: flutter_plugin_record_plus_plus
 description: The flutter voice recording plug-in,provides the recording animation and the recording successfully returns to the recording file path
-version: 0.0.16
+version: 1.0.1
 #author:  wilson <yxw_android@163.com>
-homepage: https://github.com/yxwandroid/flutter_plugin_record
+homepage: https://github.com/zhoulincome/flutter_plugin_record_plus_plus.git
 #publish_to: none
 
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.10.0"
+  sdk: ">3.5.0"
+  flutter: ">=1.12.0"
 
 
 dependencies:
@@ -31,11 +31,11 @@ flutter:
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   plugin:
-#    androidPackage: record.wilson.flutter.com.flutter_plugin_record
+#    androidPackage: record.wilson.flutter.com.flutter_plugin_record_plus
 #    pluginClass: FlutterPluginRecordPlugin
     platforms:
       android:
-        package: record.wilson.flutter.com.flutter_plugin_record
+        package: record.wilson.flutter.com.flutter_plugin_record_plus_plus
         pluginClass: FlutterPluginRecordPlugin
       ios:
         pluginClass: FlutterPluginRecordPlugin
@@ -49,8 +49,6 @@ flutter:
     - images/voice_volume_5.png
     - images/voice_volume_6.png
     - images/voice_volume_7.png
-    - images/voice_volume_total.png
-    - images/microphone.png
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

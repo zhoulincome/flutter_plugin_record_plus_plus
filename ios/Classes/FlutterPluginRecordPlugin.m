@@ -1,8 +1,3 @@
-// FlutterPluginRecordPlugin.m
-// 
-// Created by joy on 2022/07/08
-// Copyright (c) 2022年 Tencent. All rights reserved.
-//
 #import "FlutterPluginRecordPlugin.h"
 #import "DPAudioRecorder.h"
 #import "DPAudioPlayer.h"

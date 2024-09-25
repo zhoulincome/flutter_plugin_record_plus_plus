@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_plugin_record_plus/flutter_plugin_record.dart';
-import 'package:flutter_plugin_record_plus/utils/common_toast.dart';
+import 'package:flutter_plugin_record_plus_plus/flutter_plugin_record.dart';
+import 'package:flutter_plugin_record_plus_plus/utils/common_toast.dart';
 
 import 'custom_overlay.dart';
 
@@ -65,7 +65,7 @@ class _VoiceWidgetState extends State<VoiceWidget> {
 
     /// 开始录制或结束录制的监听
     recordPlugin?.response.listen((data) {
-      if (data.msg == "onStop") {
+      if (data!.msg! == "onStop") {
         ///结束录制时会返回录制文件的地址方便上传服务器
         print("onStop  " + data.path!);
         if (widget.stopRecord != null)

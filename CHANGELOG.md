@@ -1,44 +1,120 @@
-## 0.0.1
+## 1.0.1
 
-* 支持flutter 3.0.0
-* 安卓端初始化移除权限检测 
+* 录音时长类型修改为 Double（和 iOS 端保持一致）
 
-## 0.0.2
+## 1.0.0
 
-* fix ios install error
+*  添加空安全相关逻辑
+*  适配 flutter 2.0
 
-## 0.0.3
+## 0.3.5
 
-* fix android can not record issue
+*  修复ios 音频监听灵敏性问题
 
-## 0.0.4
+## 0.3.4
 
-* fix the problem of implementing ffmpeg
+*  修复根据路径录制bug
 
-## 0.0.5
+## 0.3.3
 
-* fix the problem of implementing RecordWav
+*  修复根据路径录制bug
 
-## 0.0.6
+## 0.3.2
 
-* fix the problem of implementing RecordWav
+*  修复android 获取权限bug
 
-## 0.0.7
+## 0.3.1
 
-* fix the problem of implementing RecordWav
+*  更新IOS podfile
 
-## 0.0.8
+## 0.3.0
+*   添加支持录制mp3
 
-* fix some bugs
+## 0.2.5
+*   修复权限申请bug
+## 0.2.4
+*   修复播放音频文件的bug。
+## 0.2.3
+*   修复bug
+## 0.2.2
+*   修复bug
+## 0.2.1
+*   补充说明文档
+## 0.2.0
+*   实现暂停播放和继续播放功能
+## 0.1.9
+
+*   注释掉初始化插件就申请权限的问题
+
+## 0.1.8
+
+*   添加支持 Android 和IOS 播放在线wav音频
+   
+## 0.1.7
+
+*   修复bug在未使用录音功能前，通过playByPath播发音频，音频可以正常播放，但无法监听到播放结束
+   
+## 0.1.6
+
+*   添加android 在开始录制时进行权限验证判断
+## 0.1.5
+
+*   实现根据传递的路径进行语音录制
+
+## 0.1.4
+
+*  解决 android 申请权限失败问题
+*  解决 快速点击发送语音录制停止不了问题
+
+## 0.1.3
+
+*  实现播放完成的回调监听
+
+
+## 0.1.2
+
+*  实现播放指定路径录音文件
+## 0.1.1
+
+*  格式代码
+## 0.1.0
+
+*  修复提示bug
 
 ## 0.0.9
 
-* Add separate microphone image
+*  添加记录录制时间的功能
 
-## 0.0.10
+## 0.0.8
 
-* fix some bugs
+*  重构项目为oc项目 解决播放oc 工程无法使用问题
+## 0.0.7
 
-## 0.0.11
+*  更新readme
 
-* fix some bugs
+## 0.0.6
+
+*  适配android 9.0 
+*  解决ios集成到oc项目不成功问题 
+
+## 0.0.5
+
+*  添加 readme 说明 
+
+## 0.0.4
+
+*  添加example readme 
+
+## 0.0.3
+
+*  添加引入方式 
+
+## 0.0.2
+
+* 添加license
+
+## 0.0.1
+
+* 初始化项目 
+
+

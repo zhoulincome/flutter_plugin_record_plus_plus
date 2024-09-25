@@ -1,8 +1,4 @@
-// DPAudioPlayer.m
-// 
-// Created by joy on 2022/07/08
-// Copyright (c) 2022年 Tencent. All rights reserved.
-//
+
 #import "DPAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
@@ -12,22 +8,21 @@
     BOOL isPlaying;
 }
 
-/// The factory that creates and manages audio player.
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @end
 
 @implementation DPAudioPlayer
 
-static DPAudioPlayer *gPlayerManager = nil;
+static DPAudioPlayer *playerManager = nil;
 + (DPAudioPlayer *)sharedInstance
 {
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken,^{
-        gPlayerManager = [[DPAudioPlayer alloc] init];
+        playerManager = [[DPAudioPlayer alloc] init];
     });
-    return gPlayerManager;
+    return playerManager;
 }
 
 - (instancetype)init
@@ -44,10 +39,7 @@ static DPAudioPlayer *gPlayerManager = nil;
             [[NSData data] writeToFile:amrPlayerFilePath atomically:YES];
         }
         
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-            selector:@selector(proximityStateDidChange) 
-            name:UIDeviceProximityStateDidChangeNotification 
-            object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityStateDidChange) name:UIDeviceProximityStateDidChangeNotification object:nil];
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
         [[AVAudioSession sharedInstance] setActive:YES error:nil];
 
