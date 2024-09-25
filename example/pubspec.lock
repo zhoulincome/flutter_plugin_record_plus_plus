@@ -126,7 +126,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_plugin_record_plus:
+  flutter_plugin_record_plus_plus:
     dependency: "direct dev"
     description:
       path: ".."

@@ -11,12 +11,12 @@
       <excludeFolder url="file://$MODULE_DIR$/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/example/build" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/build" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/example/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/example/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/flutter_plugin_record_plus_plus/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/App.framework/flutter_assets/packages" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -176,13 +176,13 @@
       "languageVersion": "3.3"
     },
     {
-      "name": "flutter_plugin_record_plus",
+      "name": "flutter_plugin_record_plus_plus",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-09-25T17:56:31.601236Z",
+  "generated": "2024-09-25T18:04:13.380683Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/tfgc/Documents/flutter",
