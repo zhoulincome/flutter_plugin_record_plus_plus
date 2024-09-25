@@ -65,7 +65,7 @@ class _VoiceWidgetState extends State<VoiceWidget> {
 
     /// 开始录制或结束录制的监听
     recordPlugin?.response.listen((data) {
-      if (data!.msg! == "onStop") {
+      if (data.msg! == "onStop") {
         ///结束录制时会返回录制文件的地址方便上传服务器
         print("onStop  " + data.path!);
         if (widget.stopRecord != null)
@@ -150,7 +150,7 @@ class _VoiceWidgetState extends State<VoiceWidget> {
           ),
         );
       });
-      Overlay.of(context)!.insert(overlayEntry!);
+      Overlay.of(context).insert(overlayEntry!);
     }
   }
 
