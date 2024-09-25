@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_plugin_record_plus_plus/const/play_state.dart';
-import 'package:flutter_plugin_record_plus_plus/const/response.dart';
+import 'package:flutter_plugin_record_plus/const/play_state.dart';
+import 'package:flutter_plugin_record_plus/const/response.dart';
 import 'package:uuid/uuid.dart';
 
 class FlutterPluginRecord {

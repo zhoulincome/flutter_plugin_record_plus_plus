@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_plugin_record_plus_plus/index.dart';
+import 'package:flutter_plugin_record_plus/index.dart';
 
 class WeChatRecordScreen extends StatefulWidget {
   @override

@@ -35,7 +35,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
     
-  flutter_plugin_record_plus_plus:
+  flutter_plugin_record_plus:
     path: ../
 
 # For information on the generic Dart part of this file, see the

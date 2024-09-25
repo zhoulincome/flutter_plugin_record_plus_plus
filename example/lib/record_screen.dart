@@ -1,6 +1,6 @@
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_plugin_record_plus_plus/flutter_plugin_record.dart';
+import 'package:flutter_plugin_record_plus/flutter_plugin_record.dart';
 import 'package:path_provider/path_provider.dart';
 
 class RecordScreen extends StatefulWidget {
