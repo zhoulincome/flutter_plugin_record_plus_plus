@@ -29,6 +29,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
+    namespace "record.wilson.flutter.com.flutter_plugin_record"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
